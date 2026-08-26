@@ -2742,7 +2742,6 @@ button:disabled {
   .right-panel {
     grid-template-columns: 1fr;
   }
-
   .checkin,
   .quick,
   .reminder,
