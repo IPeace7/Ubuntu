@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { 
   ArrowRight, ArrowLeft, Check, Lock, Shield, Heart, Eye, Users, Sparkles 
 } from 'lucide-react';
+import logo from '../assets/Logo.svg';
 
 export default function Onboarding({ onComplete }) {
   const [currentStep, setCurrentStep] = useState(1);
@@ -54,8 +55,7 @@ export default function Onboarding({ onComplete }) {
         ) : <div />}
         
         <div className="flex items-center gap-1.5 cursor-pointer">
-          <span className="text-xl font-serif font-bold tracking-tight text-purple-700 italic">Inside Out</span>
-          <span className="text-purple-400 text-sm">♡</span>
+          <img src={logo} alt="Inside Out" className="h-16 w-auto" />
         </div>
 
         <div className="w-8" />
@@ -94,8 +94,8 @@ export default function Onboarding({ onComplete }) {
         {currentStep === 2 && (
           <div className="space-y-5">
             <div className="text-center space-y-1">
-              <h2 className="text-xl font-bold text-gray-900">What brings you here?</h2>
-              <p className="text-xs text-gray-400">Choose all that apply.</p>
+              <h2 className="text-2xl font-bold text-gray-900">What brings you here?</h2>
+              <p className="text-sm text-gray-400">Choose all that apply.</p>
             </div>
 
             <div className="space-y-2">
@@ -105,7 +105,7 @@ export default function Onboarding({ onComplete }) {
                   <label
                     key={item.id}
                     onClick={() => toggleReason(item.id)}
-                    className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition text-xs font-medium ${
+                    className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition text-sm font-medium ${
                       isSelected 
                         ? 'border-purple-500 bg-purple-50/60 text-purple-900' 
                         : 'border-gray-200 hover:border-gray-300 bg-white text-gray-700'
@@ -128,8 +128,8 @@ export default function Onboarding({ onComplete }) {
         {currentStep === 3 && (
           <div className="space-y-6">
             <div className="text-center space-y-1">
-              <h2 className="text-xl font-bold text-gray-900">How would you like to be seen?</h2>
-              <p className="text-xs text-gray-400">You can change this anytime.</p>
+              <h2 className="text-2xl font-bold text-gray-900">How would you like to be seen?</h2>
+              <p className="text-sm text-gray-400">You can change this anytime.</p>
             </div>
 
             <div className="space-y-3">
@@ -187,8 +187,8 @@ export default function Onboarding({ onComplete }) {
         {currentStep === 4 && (
           <div className="space-y-6">
             <div className="text-center space-y-1">
-              <h2 className="text-xl font-bold text-gray-900">What would you like to explore?</h2>
-              <p className="text-xs text-gray-400">Choose topics that feel relevant to you.</p>
+              <h2 className="text-2xl font-bold text-gray-900">What would you like to explore?</h2>
+              <p className="text-sm text-gray-400">Choose topics that feel relevant to you.</p>
             </div>
 
             <div className="grid grid-cols-2 gap-2.5">
@@ -220,8 +220,8 @@ export default function Onboarding({ onComplete }) {
         {currentStep === 5 && (
           <div className="space-y-6">
             <div className="text-center space-y-1">
-              <h2 className="text-xl font-bold text-gray-900">A safe space for everyone</h2>
-              <p className="text-xs text-gray-500 max-w-xs mx-auto leading-relaxed">
+              <h2 className="text-2xl font-bold text-gray-900">A safe space for everyone</h2>
+              <p className="text-sm text-gray-500 max-w-xs mx-auto leading-relaxed">
                 Inside Out is a place to share and connect, but it isn't a replacement for professional mental-health care.
               </p>
             </div>
@@ -271,7 +271,7 @@ export default function Onboarding({ onComplete }) {
       <div className="w-full max-w-md mx-auto flex items-center justify-between pt-4 border-t border-gray-100">
         {currentStep === 1 ? (
           <button 
-            onClick={() => setCurrentStep(2)}
+            onClick={() => onComplete({ identityMode, topics })}
             className="text-xs font-medium text-gray-400 hover:text-gray-700"
           >
             Skip
