@@ -13,7 +13,7 @@ import {
 export const navMain = [
   [Home, "Home"],
   [BookOpen, "Journal"],
-  [Users, "Rooms"],
+  [Users, "Communities"],
   [MessageCircle, "Messages"],
   [Bookmark, "Saved"],
   [Bell, "Notifications"],

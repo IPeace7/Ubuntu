@@ -20,6 +20,7 @@ import {
   Lock,
   CheckCheck
 } from 'lucide-react';
+import logo from '../assets/Logo.svg';
 
 export default function MessagesPage({ activeTab = 'Messages', setActiveTab }) {
   const [currentTab, setCurrentTab] = useState(activeTab);
@@ -127,11 +128,8 @@ export default function MessagesPage({ activeTab = 'Messages', setActiveTab }) {
       <aside className="w-64 bg-white border-r border-[#EAECEF] p-5 flex flex-col justify-between h-full shrink-0">
         <div>
           {/* Logo */}
-          <div className="flex items-center gap-2 px-3 mb-8 cursor-pointer">
-            <div className="w-8 h-8 rounded-full bg-[#5E4BE2] flex items-center justify-center text-white font-bold">
-              ♡
-            </div>
-            <span className="text-xl font-bold text-[#1E2340] tracking-tight">Inside Out</span>
+          <div className="flex items-center gap-2 px-3 mb-8 cursor-pointer" onClick={() => handleNavClick('Home')}>
+            <img src={logo} alt="Inside Out" style={{ width: '200px', height: 'auto' }} />
           </div>
 
           {/* Navigation Links */}
