@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {
   Heart,
   ChevronDown,
-  ChevronRight,
   MoreHorizontal,
   Share2,
   Smile,
@@ -10,7 +9,6 @@ import {
   Frown,
   PenLine,
   EyeOff,
-  Eye,
   Quote,
   Sparkles,
   ArrowUpDown,
@@ -33,6 +31,7 @@ import { navMain, support, initialPosts, stories, topics } from "./data/constant
 import CommentsModal from "./components/CommentsModal";
 import QuickRow from "./components/QuickRow";
 import JournalPage from "./pages/JournalPage";
+import MessagesPage from "./components/Messages";
 
 export default function App({ userData }) {
   const [active, setActive] = useState("Home");
@@ -131,6 +130,11 @@ export default function App({ userData }) {
   const filteredPosts = posts.filter((post) =>
     `${post.text} ${post.tag} ${post.name}`.toLowerCase().includes(search.toLowerCase())
   );
+
+  // Full-page views that replace the whole layout
+  if (active === "Messages") {
+    return <MessagesPage activeTab={active} setActiveTab={setActive} />;
+  }
 
   return (
     <div className={`app-shell ${active === "Journal" ? "no-right-panel" : ""}`}>
