@@ -160,7 +160,7 @@ export default function App({ userData, onLogout }) {
         {active === "Journal" ? <JournalPage /> : (<>
           <header className="top-header">
             <div>
-              <h1>Good morning, Kamahoro <Sparkles className="sparkle" size={14} fill="currentColor" style={{ display: "inline", verticalAlign: "middle" }} /></h1>
+              <h1 style={{ display: "flex", alignItems: "center", gap: "6px", flexWrap: "nowrap" }}>Good morning, Kamahoro <Sparkles className="sparkle" size={14} fill="currentColor" /></h1>
               <p>Take a deep breath. You're in a safe space.</p>
             </div>
             <div className="header-actions">

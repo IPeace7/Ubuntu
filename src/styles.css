@@ -65,17 +65,17 @@ button:disabled {
   display: grid;
 
   grid-template-columns:
-    220px minmax(0, 1fr) minmax(260px, 360px);
+    200px minmax(0, 1fr) minmax(240px, 340px);
 
   gap: 12px;
 
-  padding: 0 12px 10px 12px;
+  padding: 0 12px 10px 0;
 
   align-items: start;
 }
 
 .app-shell.no-right-panel {
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 200px 1fr;
 }
 
 /* =========================
