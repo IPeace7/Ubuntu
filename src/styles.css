@@ -65,14 +65,17 @@ button:disabled {
   display: grid;
 
   grid-template-columns:
-    260px minmax(0, 1fr) 530px;
+    220px minmax(0, 1fr) minmax(260px, 360px);
 
-  gap: 16px;
+  gap: 12px;
 
-  padding:
-    0 16px 10px 16px;
+  padding: 0 12px 10px 12px;
 
   align-items: start;
+}
+
+.app-shell.no-right-panel {
+  grid-template-columns: 220px 1fr;
 }
 
 /* =========================
@@ -90,7 +93,12 @@ button:disabled {
   position: sticky;
   top: 0;
 
-  overflow-y: auto;
+  overflow-y: overlay;
+  scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .brand-wrap {
@@ -103,11 +111,12 @@ button:disabled {
 
   margin-bottom: 8px;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 .brand {
-  width: 200px;
+  width: 160px;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -2312,28 +2321,31 @@ button:disabled {
 
 /* TABLET */
 
+@media (max-width: 1280px) {
+  .app-shell {
+    grid-template-columns: 200px minmax(0, 1fr) 280px;
+    gap: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 @media (max-width: 1120px) {
   .app-shell {
-    grid-template-columns:
-      182px minmax(0, 1fr) 320px;
-
-    gap: 14px;
-
-    padding-left: 14px;
-    padding-right: 14px;
+    grid-template-columns: 180px minmax(0, 1fr) 240px;
+    gap: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
-  .header-actions {
-    gap: 9px;
+  .app-shell.no-right-panel {
+    grid-template-columns: 180px 1fr;
   }
 
-  .sharing-options button {
-    min-width: 92px;
-  }
-
-  .search-box {
-    display: none;
-  }
+  .header-actions { gap: 9px; }
+  .sharing-options button { min-width: 92px; }
+  .search-box { display: none; }
+  .top-header h1 { font-size: 15px; }
 }
 
 /* MOBILE */

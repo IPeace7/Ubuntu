@@ -66,7 +66,7 @@ export default function App({ userData, onLogout }) {
   const createPost = () => {
     const text = newPost.text.trim(); if (!text) return;
     const selectedTopic = topics.find(([name]) => name === newPost.topic);
-    setPosts(c => [{ id: Date.now(), name: newPost.anonymous ? "Anonymous" : "Maya", time: "Just now", avatar: newPost.anonymous ? "avatar-purple" : "avatar-alex", text, tag: newPost.topic, tagClass: selectedTopic?.[1] || "lavender", likes: 0, comments: 0, liked: false, commentList: [] }, ...c]);
+    setPosts(c => [{ id: Date.now(), name: newPost.anonymous ? "Anonymous" : "Kamahoro", time: "Just now", avatar: newPost.anonymous ? "avatar-purple" : "avatar-alex", text, tag: newPost.topic, tagClass: selectedTopic?.[1] || "lavender", likes: 0, comments: 0, liked: false, commentList: [] }, ...c]);
     setAnonymous(newPost.anonymous); setShowCreatePost(false); setNewPost({ text: "", topic: "Anxiety", anonymous: true });
   };
   const addComment = (postId, text) => { if (!text.trim()) return; setPosts(c => c.map(p => p.id === postId ? { ...p, comments: p.comments + 1, commentList: [...p.commentList, text.trim()] } : p)); };
@@ -160,7 +160,7 @@ export default function App({ userData, onLogout }) {
         {active === "Journal" ? <JournalPage /> : (<>
           <header className="top-header">
             <div>
-              <h1>Good evening, Maya <Sparkles className="sparkle" size={14} fill="currentColor" /></h1>
+              <h1>Good morning, Kamahoro <Sparkles className="sparkle" size={14} fill="currentColor" style={{ display: "inline", verticalAlign: "middle" }} /></h1>
               <p>Take a deep breath. You're in a safe space.</p>
             </div>
             <div className="header-actions">
@@ -216,7 +216,7 @@ export default function App({ userData, onLogout }) {
                   {showPostMenu === post.id && <div className="post-menu">
                     <button onClick={() => copyPost(post.text)}>{copied ? <Check size={14} /> : <Copy size={14} />}{copied ? "Copied" : "Copy post"}</button>
                     <button><Flag size={14} /> Report</button>
-                    {post.name === "Maya" && <button className="danger" onClick={() => deletePost(post.id)}><Trash2 size={14} /> Delete</button>}
+                    {post.name === "Kamahoro" && <button className="danger" onClick={() => deletePost(post.id)}><Trash2 size={14} /> Delete</button>}
                   </div>}
                 </article>
               ))}
