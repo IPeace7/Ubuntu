@@ -5083,3 +5083,58 @@ button:disabled {
 .logout-btn:hover {
   background: #fff0f0;
 }
+
+
+/* SAVED PAGE INTERACTIVE */
+.sp-remove-btn {
+  position: absolute; top: 7px; right: 7px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(0,0,0,0.5); color: #fff;
+  display: grid; place-items: center; cursor: pointer;
+  opacity: 0; transition: opacity 0.15s;
+}
+.sp-story-card:hover .sp-remove-btn { opacity: 1; }
+
+.sp-story-actions {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-top: 8px;
+}
+
+.sp-read-btn {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 12px; font-weight: 600; color: #6636ee; cursor: pointer;
+}
+.sp-read-btn:hover { opacity: 0.8; }
+
+.sp-resource-actions {
+  display: flex; align-items: center; gap: 6px; flex: none;
+}
+
+.sp-resource-btn {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 11px; font-weight: 600; color: #6636ee;
+  height: 26px; padding: 0 10px; border-radius: 7px;
+  border: 1.5px solid #6636ee; background: transparent; cursor: pointer;
+  white-space: nowrap;
+}
+.sp-resource-btn:hover { background: #f0ebff; }
+
+.sp-resource-remove {
+  color: #d44959; padding: 4px; cursor: pointer; border-radius: 5px;
+}
+.sp-resource-remove:hover { background: #fff0f0; }
+
+.sp-resource-expanded {
+  font-size: 12px; color: #6a6880; margin: 8px 0 0;
+  line-height: 1.6; border-top: 1px solid #f0eef3; padding-top: 8px;
+}
+
+.sp-resource-row.expanded { background: #faf8ff; border-color: #e0d8ff; }
+
+.sp-exercise-card.playing { border-color: #6636ee; background: #faf8ff; }
+.sp-exercise-card.playing .sp-play-btn { background: #6636ee; color: #fff; }
+
+.sp-exercise-remove {
+  color: #b0aec0; cursor: pointer; padding: 2px;
+}
+.sp-exercise-remove:hover { color: #d44959; }
